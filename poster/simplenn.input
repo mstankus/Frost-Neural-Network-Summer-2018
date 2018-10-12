@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+    % layer 1 nodes
+    \node [label={Layer 1}, draw, circle, teal] (x0) at (2,5) {$\sigma$};
+    \node [draw, circle, teal] (x1) at (2,3) {$\sigma$};
+    % layer 2 nodes
+    \node [label={Layer 2}, draw, circle, magenta] (a01) at (6.5,7) {$\sigma$};
+    \node [draw, circle, magenta] (a11) at (6.5,5) {$\sigma$};
+    \node [draw, circle, magenta] (a21) at (6.5,3) {$\sigma$};
+    \node [draw, circle, magenta] (a31) at (6.5,1) {$\sigma$};
+    % layer 3 nodes
+    \node [label={Layer 3}, draw, circle, orange] (a02) at (11,6) {$\sigma$};
+    \node [draw, circle, orange] (a12) at (11,4) {$\sigma$};
+    \node [draw, circle, orange] (a22) at (11,2) {$\sigma$};
+
+    % edges between layers
+
+    \draw [line width=0.1ex] (x0)--(a01);
+    \draw [line width=0.1ex] (x0)--(a11);
+    \draw [line width=0.1ex] (x0)--(a21);
+    \draw [line width=0.1ex] (x0)--(a31);
+
+    \draw [line width=0.1ex] (x1)--(a01);
+    \draw [line width=0.1ex] (x1)--(a11);
+    \draw [line width=0.1ex] (x1)--(a21);
+    \draw [line width=0.1ex] (x1)--(a31);
+
+    \draw [line width=0.1ex] (a01)--(a02);
+    \draw [line width=0.1ex] (a01)--(a12);
+    \draw [line width=0.1ex] (a01)--(a22);
+
+    \draw [line width=0.1ex] (a11)--(a02);
+    \draw [line width=0.1ex] (a11)--(a12);
+    \draw [line width=0.1ex] (a11)--(a22);
+
+    \draw [line width=0.1ex] (a21)--(a02);
+    \draw [line width=0.1ex] (a21)--(a12);
+    \draw [line width=0.1ex] (a21)--(a22);
+
+    \draw [line width=0.1ex] (a31)--(a02);
+    \draw [line width=0.1ex] (a31)--(a12);
+    \draw [line width=0.1ex] (a31)--(a22);
+\end{tikzpicture}

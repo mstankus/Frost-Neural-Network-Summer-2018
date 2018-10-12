@@ -1,0 +1,11 @@
+
+task :default do
+  sh "pdflatex draft.tex"
+  sh "biber draft"
+  sh "pdflatex draft.tex"
+  sh "pdflatex draft.tex"
+end
+
+task :clean do
+  sh "rm *.log *.out *.run.xml *bbl *.aux *.blg *.bbl *.bcf *.blg"
+end

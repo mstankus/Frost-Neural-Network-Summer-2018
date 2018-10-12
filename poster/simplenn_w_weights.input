@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+    % input nodes
+    \node [draw, circle, blue] (x0) at (0.5,7) {$x_{0}$};
+    \node [draw, circle, blue] (x1) at (0.5,2) {$x_{1}$};
+    % layer 2 activation nodes
+    \node [draw, circle, red] (a01) at (6.5,7) {$a_{0}^{1}$};
+    \node [draw, circle, red] (a11) at (6.5,2) {$a_{1}^{1}$};
+    % layer 2 bias nodes
+    \node [draw, circle] (b01) at (6.5,9.5) {$b_{0}^{1}$};
+    \node [draw, circle] (b11) at (6.5,4.5) {$b_{1}^{1}$};
+    % output neuron
+    \node [draw, circle, red] (a02) at (11,4.5) {$a_{0}^{2}$};
+    % layer 3 bias node
+    \node [draw, circle] (b02) at (11,7) {$b_{0}^{2}$};
+
+    % weights
+    \draw [line width=0.1ex] (x0)--(a01) node [near start, fill=white] {$w_{00}^{1}$};
+    \draw [line width=0.1ex] (x0)--(a11) node [near end, fill=white] {$w_{10}^{1}$};
+
+    \draw [line width=0.1ex] (x1)--(a01) node [near end, fill=white] {$w_{01}^{1}$};
+    \draw [line width=0.1ex] (x1)--(a11) node [near start, fill=white] {$w_{11}^{1}$};
+
+    \draw [line width=0.1ex] (a01)--(a02) node [near end, fill=white] {$w_{00}^{2}$};
+    \draw [line width=0.1ex] (a11)--(a02) node [near start, fill=white] {$w_{01}^{2}$};
+
+    % edges between layers
+
+    \draw [line width=0.1ex] (x0)--(a01);
+    \draw [line width=0.1ex] (x0)--(a11);
+
+    \draw [line width=0.1ex] (x1)--(a01);
+    \draw [line width=0.1ex] (x1)--(a11);
+
+    \draw [line width=0.1ex] (a01)--(b01);
+    \draw [line width=0.1ex] (a11)--(b11);
+
+    \draw [line width=0.1ex] (a01)--(a02);
+    \draw [line width=0.1ex] (a11)--(a02);
+
+    \draw [line width=0.1ex] (a02)--(b02);
+\end{tikzpicture}
